@@ -7,6 +7,9 @@ jobs:
       - image: openjdk:8-jdk-alpine
     steps:
       - checkout
+      - run:
+          name: chmod permissions
+          command: chmod +x ./gradlew
       - run: ./gradlew build
       - persist_to_workspace:
           root: ./
