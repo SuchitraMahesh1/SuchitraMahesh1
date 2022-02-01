@@ -13,8 +13,8 @@ jobs:
           paths:
             - build/libs/springrest-0.0.1-SNAPSHOT.jar
             - Dockerfile
-      -store_test_results:
-        path: build/test-results
+      - store_test_results:
+          path: build/test-results
 
 
             # Orchestrate our job run sequence
