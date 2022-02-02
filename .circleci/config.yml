@@ -33,8 +33,17 @@ jobs:
           root: ./
           paths:
             - image.txt
-
-      # Orchestrate our job run sequence
+  deploy:
+    docker:
+      - image: docker:dind
+    steps:
+      - setup_remote_docker:
+          version: 19.03.13
+      - attach_workspace:
+          at: ./
+      - run: apk add --no-cache curl
+      
+# Orchestrate our job run sequence
 workflows:
   version: 2
   spring_boot_cicd_workflow:
@@ -43,3 +52,6 @@ workflows:
       - package:
           requires:
             - build_and_test
+      - deploy:
+          requires:
+            - package
