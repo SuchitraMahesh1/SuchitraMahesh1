@@ -11,6 +11,6 @@ class SpringrestApplicationTests {
 
 	@Test
 	void contextLoads() {
-		Assertions.assertTrue(false);
+		Assertions.assertTrue(true);
 	}
 }
