@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloWorldController {
     @GetMapping("/")
     String getHelloWorld(){
-        return "<h1>My first web page</h1>";
+        return "<h1>My fancy first web page</h1>";
     }
 }
